@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+}
+
+.container > div {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 20vh;
+}
+
+.one {
+    font-size: 4.5rem;
+}
+
+.two {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.three {
+    font-size: 3rem;
+}
+
+.textbox {
+    border: 3px solid #aaa;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    width: 75vw;
+}
+
+.textbox_chat {
+    margin: 0;
+    text-align: justify;
+}
+
+.textbox_chat span {
+    visibility: hidden;
+}
+
+.fake_button {
+    background-color: rgb(21, 161, 237);
+    border-radius: 3px;
+    bottom: -50px;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    right: 5px;
+}
+
+.five p {
+    font-size: 2rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.six {
+    position: relative;
+    z-index: 1;
+}
+
+.bae {
+        display: inline-block;
+        height: 30%;
+        width: 30%;
+
+    @media screen and (max-width: 767px) {
+        height: 90%;
+        width: 90%;
+    }
+}

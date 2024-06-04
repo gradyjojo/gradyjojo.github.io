@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capstone Project Team 15</title>
+  <link rel="icon" href="/asset/revou_icon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- DataTables -->
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- DataTables JS -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Head Section -->
+  <header>
+    <div class="container-head">
+      <a href="#home"><img src="/asset/Logo_Kampus_Merdeka_Kemendikbud 1.svg" alt="Kampus Merdeka Logo"></a>
+      <nav>
+        <a href="#home" class="nav-btn"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="nav-btn"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="#dashboard" class="nav-btn"><i class="fa-solid fa-square-poll-vertical"></i> Dashboard</a>
+        <a href="#table" class="nav-btn"><i class="fa-solid fa-magnifying-glass-chart"></i> Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="home">
+      <div class="tagline"><h1 class="pad">Superstore Giant</h1>
+      <p class="pad">US Ecommerce with Multiple Branches</p>
+      <a href="#about"><button class="pad">Read More <i class="fa-solid fa-chevron-right"></i></button></a>
+      </div>
+      <img src="/asset/hero-img.svg" alt="hero image" class="hero">
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about subheading">
+      <div class="background">
+        <h2>About</h2>
+        <hr>
+        <p>With growing demands and cut-throat competitions in the market, a Superstore Giant is seeks to get to understand what works best for them by understand which products, regions, categories and customer segments they should target or avoid.</p>
+        <p><span>Giant Superstore</span> is a retail chain offering a diverse range of products, including office supplies, furniture, technology, and consumer goods. Sales data analysis provides insights into product performance, regional sales, customer segmentation, sales performance, and market trends. Leveraging the rich insights from the dataset, Superstore Giant can optimize inventory, marketing strategies, and strategic decision-making based on data, helping the company grow and maintain its position as a leading retail destination.</p>
+      </div>
+      
+      <div class="about-grid">
+        <div class="customer-about">
+          <div class="title">
+            <h3><i class="fa-solid fa-person"></i> 790++</h3>
+          </div>
+          <div class="desc">
+            <p>Customers</p>
+          </div>
+          </div>
+        <div class="product-about">
+          <div class="title">
+            <h3><i class="fa-solid fa-cart-shopping"></i> 3.7M++</h3>
+          </div>
+          <div class="desc">
+            <p>Product Sold</p>
+          </div>
+        </div>
+        <div class="profit-about">
+          <div class="title">
+            <h3><i class="fa-solid fa-money-bill-trend-up"></i> 110K++</h3>
+          </div>
+          <div class="desc">
+            <p>Profit in USD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard subheading">
+      <h2>Dashboard</h2>
+      <hr>
+      <aside>
+        <h3>Giant Superstore Dashboard</h3>
+        <form action="">
+
+          <!-- Year Filter -->
+          <select name="" id="yearDropdown">
+            <option value="">Year</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+          </select>
+
+          <!-- Discount Filter -->
+          <select name="" id="discountDropdown">
+            <option value="">Discount Type</option>
+            <option value="noDiscount">No Discount</option>
+            <option value="lowDiscount">Low Discount</option>
+            <option value="moderateDiscount">Moderate Discount</option>
+            <option value="bigDiscount">Big Discount</option>
+          </select>
+
+          <!-- Region Filter -->
+          <select name="" id="regionDropdown">
+            <option value="">Region</option>
+            <option value="West">West</option>
+            <option value="East">East</option>
+            <option value="Central">Central</option>
+            <option value="South">South</option>
+          </select>
+
+          <!-- Segmen Filter -->
+          <select name="" id="segmentDropdown">
+            <option value="">Segmen</option>
+            <option value="Consumer">Consumer</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Home Office">Home Office</option>
+          </select>
+        </form>
+      </aside>
+
+      <!-- Dashboard layout -->
+      <div class="container-main">
+
+        <!-- Card Chart -->
+        <section class="section1">
+          <div class="card">
+            <div class="card-title">
+              <p><i class="fa-solid fa-chart-line"></i> </p>
+            </div>
+            <div class="card-desc">
+              <small>Net Profit (USD)</small>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <p><i class="fa-solid fa-chart-column"></i> </p>
+            </div>
+            <div class="card-desc">
+              <small>Revenue (USD)</small>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <p><i class="fa-solid fa-id-card"></i> </p>
+            </div>
+            <div class="card-desc">
+              <small>CLV (USD)</small>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <p><i class="fa-solid fa-basket-shopping"></i> </p>
+            </div>
+            <div class="card-desc">
+              <small>Total Orders</small>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Main Chart Part 1 -->
+        <section class="section2">
+          <div class="chart1">
+            <canvas id="myChart1"></canvas>
+          </div>
+          <div class="chart2">
+            <canvas id="myChart2"></canvas>
+          </div>
+        </section>
+
+        <!-- Main Chart Part 2 -->
+        <section class="section3">
+          <div class="chart3">
+            <canvas id="myChart3"></canvas>
+          </div>
+          <div class="chart3">
+            <canvas id="myChart4"></canvas>
+          </div>
+          <div class="chart3">
+            <canvas id="myChart5"></canvas>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- Table -->
+    <section id="table" class="table-grid">
+      <div class="table-prop subheading">
+        <h2>Table</h2>
+        <hr>
+        <table id="myTable" class="display" width="100%" data-order='[[ 1, "desc" ]]'>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>CLV</th>
+              <th>Profit</th>
+              <th>Sales</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-foot">
+      <p>&copy; 2024 Team 15. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Chart.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+  <script src="/js/script.js">
+  </script>
+</body>
+</html>

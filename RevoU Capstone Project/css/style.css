@@ -1,0 +1,421 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #141D38;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+}
+
+
+.container-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.container-head img {
+  padding: 2vh 0;
+  padding-left: 2vw;
+}
+
+img {
+  width: 80px;
+}
+
+.nav-btn {
+  color: #224379;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 1vw;
+}
+
+.nav-btn:hover {
+  color: #3861A9;
+  border: 1px solid;
+  border-radius: 25px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 100vh;
+}
+
+.hero {
+  width: 740px;
+  border-radius: 10px;
+}
+
+.pad {
+  margin-bottom: 3vh;
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+.tagline p {
+  font-size: 1.2rem;
+  color: #A5A5A5;
+}
+
+button {
+  background-color: #497BD9;
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFD45D;
+  color: #141D38;
+}
+
+.subheading {
+  text-align: center;
+  width: 100%;
+  padding-top: 20vh;
+}
+
+.about {
+  height: 100vh;
+}
+
+.background {
+  margin: 0 60px;
+}
+
+.subheading h2 {
+  font-size: 2rem;
+}
+
+hr {
+  width: 50px;
+  height: 3px;
+  background-color: #FFD45D;
+  border: none;
+  margin-bottom: 30px;
+}
+
+span {
+  color: #FFCA56;
+  font-weight: bolder;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-areas: 
+  'customer product profit';
+}
+
+.customer-about {
+  grid-area: customer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-about {
+  grid-area: product;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profit-about {
+  grid-area: profit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  color: #FFCA56;
+  font-size: 1.9rem;
+}
+
+.desc {
+  margin-top: -40px;
+  font-weight: bold;
+}
+
+aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C69C1;
+  margin-top: 40px;
+  padding: 0 20px;
+  position: sticky;
+  top: 68px;
+  z-index: 1;
+}
+
+aside h3 {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.container-main {
+  background-color: #E9E9E9;
+  display: grid;
+  grid-template-areas: 
+    'section1 section1 section1 section1'
+    'section2 section2 section2 section2'
+    'section3 section3 section3 section3'
+    'section4 section4 section4 section4';
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 20px;
+}
+
+.section1 {
+  grid-area: section1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.card {
+  background-color: white;
+  color: #FFCA56;
+  border-radius: 10px;
+  width: 24.1%;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-desc {
+  margin-top: -20px;
+  padding-bottom: 20px;
+}
+
+canvas {
+  background-color: white;
+  border-radius: 10px;
+  height: 250px;
+}
+
+.section2 {
+  margin-top: 24px;
+  grid-area: section2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart1 {
+  width: 54.4%;
+}
+
+.chart2 {
+  width: 44.4%;
+}
+
+.section3 {
+  margin: 24px 0;
+  grid-area: section3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart3 {
+  width: 32.6%;
+}
+
+.table-grid {
+  margin-bottom: 24px;
+  grid-area: section4;
+  width: 100%;
+  background-color: #E9E9E9;
+  display: flex;
+}
+
+.table-prop {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scroll */
+  overflow-y: hidden; /* Disables vertical scroll if not needed */
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 24px 24px;
+  padding: 20vh 12px 4px;
+}
+
+footer {
+  display: flex;
+  background-color: #141D38;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: -24px;
+  height: 100vh;
+}
+
+/* Default styles for large screens (Laptop/Desktop) */
+@media (min-width: 1280px) {
+  /* Your existing layout styles */
+}
+
+/* Laptop/Desktop: 1024px x 1366px ke atas, pertahankan layout dengan ukuran komponen lebih kecil */
+@media (max-width: 1024px) {
+  .container-head {
+    display: none;
+  }
+
+  .home, .about {
+    height: auto;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .home {
+    padding: 100px 0;
+    background-image: url(/asset/hero-img.svg);
+    background-size: contain;
+    width: 100%;
+  }
+
+  .subheading {
+    padding-top: 0;
+  }
+
+  .hero {
+    width: 540px;
+  }
+  
+  .pad {
+    margin-left: 4vw;
+  }
+
+  .tagline p {
+    color: #141D38;
+  }
+
+  aside {
+    top: 0;
+  }
+
+  .card {
+    width: 24%;
+  }
+
+  footer {
+    height: 20vh;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .home {
+    padding: 20px;
+    background-image: url(/asset/hero-img.svg);
+    background-size: cover;
+    width: 100%;
+  }
+
+  .background {
+    margin: 0 4vw;
+  }
+
+  .subheading h2 {
+    font-size: 1.2rem;
+    margin-top: 5vh;
+  }
+
+  .about p {
+    font-size: 0.7rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .desc {
+    margin: -24px;
+  }
+
+  aside h3 {
+    font-size: 1rem;
+  }
+
+  .container-main {
+    background-color: #E9E9E9;
+    display: grid;
+    grid-template-areas: 
+      'section1 section1'
+      'section2 section2'
+      'section3 section3'
+      'section4 section4';
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section1 {
+    grid-area: section1;
+    display: grid;
+    grid-template-areas: 
+      'card card'
+      'card card';
+  }
+
+  .card {
+    width: 42vw;
+    font-weight: bold;
+    margin: 7px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-desc {
+    margin: -15px;
+    padding-bottom: 30px;
+    font-size: 0.9rem;
+  }
+
+  .section2 {
+    grid-area: section2;
+    display: grid;
+    grid-template-areas: 
+      'chart1 chart1'
+      'chart2';
+  }
+
+  .section3 {
+    grid-area: section3;
+    display: grid;
+    grid-template-areas: 
+    'chart3'
+    'chart3'
+    'chart3';
+  }
+
+  .chart1 , .chart2 , .chart3 {
+    width: 90vw;
+    margin-bottom: 24px;
+  }
+}
