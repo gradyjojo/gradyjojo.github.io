@@ -1,3 +1,4 @@
+// Chart
 document.addEventListener('DOMContentLoaded', function () {
     const ctx1 = document.getElementById('myChart1').getContext('2d');
     const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -44,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Display Total Orders
             totalOrderElement.innerHTML = `<i class="fa-solid fa-shopping-cart"></i> ${orderCount.toLocaleString()}`;
         });
-    
-    
+
     function updateCharts(data) {
         const year = document.getElementById('yearDropdown').value;
         const discount = document.getElementById('discountDropdown').value;
@@ -143,6 +143,26 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Total Orders and Profit of Sub-Category',
+                        font: {
+                            size: 17
+                        },
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Count of Orders and Profit for each Sub-Category',
+                        font: {style: 'italic'}
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -205,6 +225,26 @@ document.addEventListener('DOMContentLoaded', function () {
             options: {
                 indexAxis: 'y',
                 maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Top 5 Performing Sub-Category',
+                        font: {
+                            size: 17
+                        },
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Rank of Sub-Category Based on Sum of Profit',
+                        font: {style: 'italic'}
+                    }
+                },
                 scales: {
                     x: {
                         beginAtZero: true,
@@ -281,7 +321,31 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Ratio of Category by Revenue',
+                        font: {
+                            size: 17
+                        },
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Proportion of each category by Sum of Sales',
+                        font: {style: 'italic'},
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    },
                     datalabels: {
                         formatter: (value, context) => {
                             const percentage = ((value / totalRevenue3) * 100).toFixed(2);
@@ -356,6 +420,26 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Total Quantity and Profit of Category',
+                        font: {
+                            size: 17
+                        },
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Sum of Quantity and Profit for each Category',
+                        font: {style: 'italic'}
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -415,7 +499,31 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Ratio of New Customer by Discount Type',
+                        font: {
+                            size: 17
+                        },
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Proportion of Discount Type that affects to reach New Customer',
+                        font: {style: 'italic'},
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    },
                     datalabels: {
                         formatter: (value, context) => {
                             const percentage = ((value / 793) * 100).toFixed(2);
@@ -434,18 +542,49 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Table
 $(document).ready(function() {
     $.getJSON("../asset/table.json", function(data) {
-        console.log("Data loaded successfully:", data); // Debugging: log the data to console
         $('#myTable').DataTable({
             data: data,
             columns: [
                 { data: 'Product_Name' },
-                { data: 'CLV' },
-                { data: 'Profit' },
-                { data: 'Revenue' },
-                { data: 'Quantity' }
-            ]
+                { data: 'Discount_Type' },
+                { data: 'Discount_Average' },
+                { data: 'Net_Profit' }
+            ],
+            'scrollX': true
         });
     });
+});
+
+// Insight
+var currentButton = null;
+var currentInsight = null;
+
+function showInsight(insightNumber) {
+    // Hide the current insight
+    if (currentInsight !== null) {
+        currentInsight.style.display = 'none';
+    }
+    
+    // Deactivate the current button
+    if (currentButton !== null) {
+        currentButton.classList.remove('active');
+    }
+
+    // Activate the clicked button
+    var clickedButton = document.getElementById('button-' + insightNumber);
+    clickedButton.classList.add('active');
+    currentButton = clickedButton;
+
+    // Show the selected insight
+    var newInsight = document.getElementById('insight-' + insightNumber);
+    newInsight.style.display = 'block';
+    currentInsight = newInsight;
+}
+
+// Display insight 1 by default
+document.addEventListener('DOMContentLoaded', function() {
+    showInsight(1);
 });
