@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Capstone Project Team 15</title>
-  <link rel="icon" href="/asset/revou_icon.svg">
+  <link rel="icon" href="../asset/revou_icon.svg">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- DataTables -->
   <!-- DataTables CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
   <!-- DataTables JS -->
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
@@ -24,10 +26,10 @@
     <div class="container-head">
       <a href="#home"><img src="../asset/Logo_Kampus_Merdeka_Kemendikbud 1.svg" alt="Kampus Merdeka Logo"></a>
       <nav>
-        <a href="#home" class="nav-btn"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="#about" class="nav-btn"><i class="fa-solid fa-circle-info"></i> About</a>
-        <a href="#dashboard" class="nav-btn"><i class="fa-solid fa-square-poll-vertical"></i> Dashboard</a>
-        <a href="#table" class="nav-btn"><i class="fa-solid fa-magnifying-glass-chart"></i> Table</a>
+        <a href="#home" class="nav-btn"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+        <a href="#about" class="nav-btn"><i class="fa-solid fa-circle-info"></i> <span>About</span></a>
+        <a href="#dashboard" class="nav-btn"><i class="fa-solid fa-square-poll-vertical"></i> <span>Dashboard</span></a>
+        <a href="#insight" class="nav-btn"><i class="fa-solid fa-magnifying-glass-chart"></i> <span>Insight</span></a>
       </nav>
     </div>
   </header>
@@ -49,7 +51,7 @@
         <h2>About</h2>
         <hr>
         <p>With growing demands and cut-throat competitions in the market, a Superstore Giant is seeks to get to understand what works best for them by understand which products, regions, categories and customer segments they should target or avoid.</p>
-        <p><span>Giant Superstore</span> is a retail chain offering a diverse range of products, including office supplies, furniture, technology, and consumer goods. Sales data analysis provides insights into product performance, regional sales, customer segmentation, sales performance, and market trends. Leveraging the rich insights from the dataset, Superstore Giant can optimize inventory, marketing strategies, and strategic decision-making based on data, helping the company grow and maintain its position as a leading retail destination.</p>
+        <p><strong>Giant Superstore</strong> is a retail chain offering a diverse range of products, including office supplies, furniture, technology, and consumer goods. Sales data analysis provides insights into product performance, regional sales, customer segmentation, sales performance, and market trends. Leveraging the rich insights from the dataset, Superstore Giant can optimize inventory, marketing strategies, and strategic decision-making based on data, helping the company grow and maintain its position as a leading retail destination.</p>
       </div>
       
       <div class="about-grid">
@@ -129,8 +131,8 @@
       <div class="container-main">
 
         <!-- Card Chart -->
-        <section class="section1">
-          <div class="card">
+        <section class="card">
+          <div class="card-grid">
             <div class="card-title">
               <p><i class="fa-solid fa-chart-line"></i> </p>
             </div>
@@ -138,7 +140,7 @@
               <small>Net Profit (USD)</small>
             </div>
           </div>
-          <div class="card">
+          <div class="card-grid">
             <div class="card-title">
               <p><i class="fa-solid fa-chart-column"></i> </p>
             </div>
@@ -146,7 +148,7 @@
               <small>Revenue (USD)</small>
             </div>
           </div>
-          <div class="card">
+          <div class="card-grid">
             <div class="card-title">
               <p><i class="fa-solid fa-id-card"></i> </p>
             </div>
@@ -154,7 +156,7 @@
               <small>CLV (USD)</small>
             </div>
           </div>
-          <div class="card">
+          <div class="card-grid">
             <div class="card-title">
               <p><i class="fa-solid fa-basket-shopping"></i> </p>
             </div>
@@ -164,48 +166,185 @@
           </div>
         </section>
         
-        <!-- Main Chart Part 1 -->
-        <section class="section2">
+        <!-- Main Chart -->
           <div class="chart1">
             <canvas id="myChart1"></canvas>
           </div>
           <div class="chart2">
             <canvas id="myChart2"></canvas>
           </div>
-        </section>
 
         <!-- Main Chart Part 2 -->
-        <section class="section3">
           <div class="chart3">
             <canvas id="myChart3"></canvas>
           </div>
-          <div class="chart3">
+          <div class="chart4">
             <canvas id="myChart4"></canvas>
           </div>
-          <div class="chart3">
+          <div class="chart5">
             <canvas id="myChart5"></canvas>
           </div>
-        </section>
       </div>
     </section>
+
     <!-- Table -->
-    <section id="table" class="table-grid">
-      <div class="table-prop subheading">
+    <section class="table subheading">
+      <div class="table-prop">
         <h2>Table</h2>
         <hr>
-        <table id="myTable" class="display" width="100%" data-order='[[ 1, "desc" ]]'>
+        <h3><i>The Effect of Discount Type on Net Profit</i></h3>
+        <table id="myTable" class="display" data-order='[[ 3, "desc" ]]'>
           <thead>
             <tr>
               <th>Product Name</th>
-              <th>CLV</th>
-              <th>Profit</th>
-              <th>Sales</th>
-              <th>Quantity</th>
+              <th>Discount Type</th>
+              <th>Discount Average</th>
+              <th>Net Profit</th>
             </tr>
           </thead>
           <tbody>
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <!-- Insight -->
+    <section id="insight" class="insight subheading">
+      <h2>Business Insight</h2>
+      <hr>
+      <div class="container-insight">
+        <div class="button-insight">
+          <button id="button-1" onclick="showInsight(1)">Overall</button>
+              <button id="button-2" onclick="showInsight(2)">West</button>
+              <button id="button-3" onclick="showInsight(3)">East</button>
+              <button id="button-4" onclick="showInsight(4)">Central</button>
+              <button id="button-5" onclick="showInsight(5)">South</button>
+        </div>
+        <div class="card-insight" id="insight-1">
+          <h3>Overview</h3>
+          <p>Here is the section where we will provide insights that we have gathered through the data analysis process.</p>
+          <p>The insights that we present are in the form of recommendations that are appropriate for each region, with reference to how high or low the CLV numbers are in each region. If a region has a high CLV number, then it will be recommended to implement a strategy in the form of increasing revenue. Meanwhile, if a region has a low CLV number, then it will be recommended to implement strategies such as reducing costs.</p>
+          <h3>Overall Insight</h3>
+          <ul>
+            <li>
+              <b>Profit Growth:</b> Profit is projected to increase by 13.14% in 2018.
+            </li>
+            <br>
+            <li>
+              <b>Impact of Discounts:</b> Discounts have proven to be highly effective in attracting new customers, with 97.73% of new Customers influenced by promotional discounts.
+            </li>
+            <br>
+            <li>
+              <b>Strategy for High CLV Regions:</b> In regions with high Customer Lifetime Value (CLV), implementing a revenue increase strategy is more effective. Offering discounts can attract new customers and retain existing ones, therby boosting overall profits.
+            </li>
+            <br>
+            <li>
+              <b>Strategy for Low CLV Regions:</b> In regions with low CLV, a cost reduction strategy is more suitable. Large discounts may not be as relevant because they tend to increase expenses. Therefore, it is advisable to reduce the frequency and intensity of discounts in these areas.
+            </li>
+          </ul>
+          <h3>Recommendations</h3>
+          <ul>
+            <li>
+              <b>Focus on Key Categories:</b> Continue to prioritize the office supplies and furniture categories, as these contribute significantly to Giant's revenue.
+            </li>
+            <br>
+            <li>
+              <b>Adjust Discount Strategy:</b> Reduce the frequency and intensity of discounts on binders, especially in the southern and central regions, to optimize cost management.
+            </li>
+          </ul>
+        </div>
+        <div class="card-insight" id="insight-2">
+          <h3>West Region Summary:</h3>
+          <ul>
+            <li>
+              The most revenue-generating product: Phones, Chairs, Storage.
+            </li>
+            <li>
+              The most profitable product: Paper, Phones, Binders.
+            </li>
+            <li>
+              The highest quantity sold product : Binders, Paper, Furnishings.
+            </li>
+          </ul>
+          <h3>Recommendations:</h3>
+          <ul>
+            <li>
+              Recommended to use an Increase Revenue strategy by offering a discount (Big or Moderate Discount) at specific time to gain more customers to enhance the revenue.
+            </li>
+            <li>
+              Consider applying discounts to Phones, Chairs, and Storage.
+            </li>
+          </ul>
+        </div>
+        <div class="card-insight" id="insight-3">
+          <h3>East Region Summary:</h3>
+          <ul>
+            <li>
+              The most revenue-generating product: Phones, Chairs, Storage.
+            </li>
+            <li>
+              The most profitable product: Paper, Furnishings, Accessories.
+            </li>
+            <li>
+              The highest quantity sold product: Binders, Paper, Furnishings.
+            </li>
+          </ul>
+          <h3>Recommendations:</h3>
+          <ul>
+            <li>
+              Recommended to use an Increase Revenue strategy by offering a discount (Big or Moderate Discount) at specific time to gain more customers to enhance the revenue.
+            </li>
+            <li>
+              Consider applying discounts to Phones, Chairs, and Storage.
+            </li>
+          </ul>
+        </div>
+        <div class="card-insight" id="insight-4">
+          <h3>Central Region Summary:</h3>
+          <ul>
+            <li>
+              The most revenue-generating product: Phones, Storage, Accessories.
+            </li>
+            <li>
+              The most profitable product: Paper, Phones, Accessories.
+            </li>
+            <li>
+              The highest quantity sold product: Binders, Paper, Furnishings.
+            </li>
+          </ul>
+          <h3>Recommendations:</h3>
+          <ul>
+            <li>
+              Recommended to use an Reduce Cost strategy by reduce a discount strategy or Implement a Small Discount strategy  at specific time to reduce the spend cost.
+            </li>
+            <li>
+              Consider applying discounts to Paper, Phones, Accessories.
+            </li>
+          </ul>
+        </div>
+        <div class="card-insight" id="insight-5">
+          <h3>South Region Summary:</h3>
+          <ul>
+            <li>
+              The most revenue-generating product : Phones, Storage, Accessories.
+            </li>
+            <li>
+              The most profitable product : Paper, Phones, Furnishings.
+            </li>
+            <li>
+              The highest quantity sold product : Binders, Paper, Furnishings.
+            </li>
+          </ul>
+          <h3>Recommendations:</h3>
+          <ul>
+            <li>
+              Recommended to use an Reduce Cost strategy by reduce a discount strategy or Implement a Small Discount strategy  at specific time to reduce the spend cost.
+            </li>
+            <li>
+              Consider applying discounts to Paper, Phones, Furnishings.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
