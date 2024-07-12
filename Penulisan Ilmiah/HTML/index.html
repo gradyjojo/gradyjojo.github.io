@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Logo & Website's Title -->
+    <link rel="icon" type="image/png" href="../Asset/logo gunadarma.png" />
+    <title>Dashboard Daerah Rentan Rawan Pangan di Indonesia</title>
+
+    <!-- CSS External File -->
+    <link rel="stylesheet" href="../CSS/style.css" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icon -->
+    <script src="https://kit.fontawesome.com/193a241ea0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark fixed-top">
+        <div class="container-fluid">
+          <h2 class="navbar-brand">Dashboard Kerenatan Pangan</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dashboard Kerentanan Pangan</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" data-id="1"> <i class="fa-solid fa-chart-simple"></i> Dashboard </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-id="2"><i class="fa-solid fa-magnifying-glass-chart"> </i> Analytics </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <section class="active">
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/235805ff-fb60-49d0-9f52-399712ed2f26/page/ysb4D"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+        ></iframe>
+      </section>
+      <section class="other-page">
+        <div class="page-config">
+          <h2>Peringkat setiap Daerah</h2>
+          <p><span>Berdasarkan setiap Indikator</span></p>
+          <hr />
+          <aside>
+            <div class="dropdown">
+              <button onclick="toggleDropdown('dropdown-content1')">Indeks Komposit <i class="fa-solid fa-caret-down"></i></button>
+              <div id="dropdown-content1" class="dropdown-content">
+                <label><input type="checkbox" id="select-all1" onclick="selectAll('dropdown-content1', this)" value="Pilih Semua" /> Pilih semua</label>
+                <label><input type="checkbox" class="option1" value="Sangat Rentan" /> Sangat rentan</label>
+                <label><input type="checkbox" class="option1" value="Rentan" /> Rentan</label>
+                <label><input type="checkbox" class="option1" value="Agak Rentan" /> Agak rentan</label>
+                <label><input type="checkbox" class="option1" value="Tahan" /> Tahan</label>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button onclick="toggleDropdown('dropdown-content2')">Tahun <i class="fa-solid fa-caret-down"></i></button>
+              <div id="dropdown-content2" class="dropdown-content">
+                <label><input type="checkbox" id="select-all2" onclick="selectAll('dropdown-content2', this)" /> Pilih semua</label>
+                <label><input type="checkbox" class="option2" /> 2023</label>
+                <label><input type="checkbox" class="option2" /> 2022</label>
+                <label><input type="checkbox" class="option2" /> 2021</label>
+                <label><input type="checkbox" class="option2" /> 2020</label>
+                <label><input type="checkbox" class="option2" /> 2019</label>
+                <label><input type="checkbox" class="option2" /> 2018</label>
+              </div>
+            </div>
+            <button id="reset-btn">Reset</button>
+          </aside>
+          <div class="food-dimension">
+            <div class="button-dimension">
+              <button id="btn-1" onclick="showPage('page-1', this)">Aspek Ketersediaan Pangan</button>
+              <div class="dropdown-dimension">
+                <button id="btn-2">Aspek Aspek Pangan <i class="fa-solid fa-caret-down"></i></button>
+                <div class="dropdown-content-dimension">
+                  <a href="#" onclick="showPage('page-2', document.getElementById('btn-2'))">Kemiskinan</a>
+                  <a href="#" onclick="showPage('page-3', document.getElementById('btn-2'))">Pengeluaran Pangan</a>
+                  <a href="#" onclick="showPage('page-4', document.getElementById('btn-2'))">Tanpa Listrik</a>
+                </div>
+              </div>
+
+              <div class="dropdown-dimension">
+                <button id="btn-3">Aspek Pemanfaatan Pangan <i class="fa-solid fa-caret-down"></i></button>
+                <div class="dropdown-content-dimension">
+                  <a href="#" onclick="showPage('page-5', document.getElementById('btn-3'))">Tanpa Air Bersih</a>
+                  <a href="#" onclick="showPage('page-6', document.getElementById('btn-3'))">Lama Sekolah Perempuan</a>
+                  <a href="#" onclick="showPage('page-7', document.getElementById('btn-3'))">Rasio Tenaga Kesehatan</a>
+                  <a href="#" onclick="showPage('page-8', document.getElementById('btn-3'))">Angka Harapan Hidup</a>
+                  <a href="#" onclick="showPage('page-9', document.getElementById('btn-3'))">Stunting</a>
+                </div>
+              </div>
+            </div>
+            <div id="page-1" class="page">
+              <h4>Aspek Ketersediaan Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-1"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-bowl-rice"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>NCPR</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 1,50 Defisit tinggi</li>
+                      <li>1,25 - < 1,50 Defisit Sedang</li>
+                      <li>1,00 - < 1,25 Defisit rendah</li>
+                      <li>0,75 - < 1,00 Surplus rendah</li>
+                      <li>0,50 - < 0,75 Surplus sedang</li>
+                      <li>< 0,50 Surplus tinggi</li>
+                      <li>Wilayah perkotaan tidak ada data</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-2" class="page">
+              <h4>Aspek Akses Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-2"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Kemiskinan</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 35 Sangat Buruk</li>
+                      <li>25 - < 35 Buruk</li>
+                      <li>20 - < 25 Agak Buruk</li>
+                      <li>15 - < 20 Agak Baik</li>
+                      <li>10 - < 15 Baik</li>
+                      <li>< 10 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-3" class="page">
+              <h4>Aspek Akses Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-3"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-money-bill-transfer"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Pengeluaran Pangan</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 70 Sangat Buruk</li>
+                      <li>60 - < 70 Buruk</li>
+                      <li>50 - < 60 Agak Buruk</li>
+                      <li>40 - < 50 Agak Baik</li>
+                      <li>30 - < 40 Baik</li>
+                      <li>< 30 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-4" class="page">
+              <h4>Aspek Akses Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-4"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-plug-circle-xmark"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Tanpa Listrik</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 50 Sangat Buruk</li>
+                      <li>40 - < 50 Buruk</li>
+                      <li>30 - < 40 Agak Buruk</li>
+                      <li>20 - < 30 Agak Baik</li>
+                      <li>10 - < 20 Baik</li>
+                      <li>< 10 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-5" class="page">
+              <h4>Aspek Pemanfaatan Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-5"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-droplet-slash"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Tanpa Air Bersih</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 70 Sangat Buruk</li>
+                      <li>60 - < 70 Buruk</li>
+                      <li>50 - < 60 Agak Buruk</li>
+                      <li>40 - < 50 Agak Baik</li>
+                      <li>30 - < 40 Baik</li>
+                      <li>< 30 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-6" class="page">
+              <h4>Aspek Pemanfaatan Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-6"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-school-circle-xmark"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Lama Sekolah Perempuan</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>< 6 Sangat Buruk</li>
+                      <li>6 - < 6,5 Buruk</li>
+                      <li>6,5 - < 7,5 Agak Buruk</li>
+                      <li>7,5 - < 8,5 Agak Baik</li>
+                      <li>8,5 - < 9 Baik</li>
+                      <li>>= 9 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-7" class="page">
+              <h4>Aspek Pemanfaatan Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-7"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Rasio Tenaga Kesehatan</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 30 Sangat Buruk</li>
+                      <li>20 - < 30 Buruk</li>
+                      <li>15 - < 20 Agak Buruk</li>
+                      <li>10 - < 15 Agak Baik</li>
+                      <li>5 - < 10 Baik</li>
+                      <li>< 5 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-8" class="page">
+              <h4>Aspek Pemanfaatan Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-8"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-person-arrow-up-from-line"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Angka Harapan Hidup</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li><= 58 Sangat Buruk</li>
+                      <li>58 > - 61 Buruk</li>
+                      <li>61 > - 64 Agak Buruk</li>
+                      <li>64 > - 67 Agak Baik</li>
+                      <li>67 > - 70 Baik</li>
+                      <li>> 70 Sangat Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="page-9" class="page">
+              <h4>Aspek Pemanfaatan Pangan</h4>
+              <div class="widget">
+                <div class="chart-1">
+                  <canvas id="myChart-9"></canvas>
+                </div>
+                <div class="chart-2">
+                  <div class="card-grid">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <div class="card-title">
+                      <p></p>
+                    </div>
+                    <div class="card-desc">
+                      <p>Stunting</p>
+                    </div>
+                  </div>
+                  <div class="context">
+                    <p>Keterangan:</p>
+                    <ul>
+                      <li>>= 40 Sangat Buruk</li>
+                      <li>30 - < 39 Buruk</li>
+                      <li>20 - < 29 Kurang</li>
+                      <li>< 20 Baik</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- JavaScript External File -->
+    <script src="../JS/script.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Chart.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
