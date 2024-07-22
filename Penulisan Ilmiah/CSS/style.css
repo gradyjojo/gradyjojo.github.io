@@ -33,7 +33,7 @@ main .other-page {
 
 main iframe {
   width: 100%;
-  height: 100vh;
+  height: 155vh;
 }
 
 .page-config {
@@ -66,7 +66,7 @@ aside {
   position: -webkit-sticky;
   position: sticky;
   top: 56px;
-  z-index: 1000;
+  z-index: 1;
 }
 
 aside button {
@@ -104,7 +104,7 @@ aside .reset-btn:hover {
   background-color: #1F2E2C;
   min-width: 156px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1001; /* Make sure this is higher than the z-index of 'aside' */
+  z-index: 2;
 }
 
 .dropdown-content label {
